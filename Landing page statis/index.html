@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kopi Nusantara — Roasteri kopi spesialti Indonesia dari Yogyakarta. Nikmati kopi single-origin terbaik dari Toraja, Gayo, Kintamani, dan Flores.">
+    <meta name="keywords" content="kopi, kopi nusantara, kopi spesialti, specialty coffee, kopi indonesia, roasteri yogyakarta, kopi toraja, kopi gayo">
+    <meta name="author" content="Kopi Nusantara">
+    <title>Kopi Nusantara — Roasteri Kopi Spesialti Indonesia</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coffee: {
+                            50: '#fdf8f0',
+                            100: '#f5e6d3',
+                            200: '#e8c9a0',
+                            300: '#d4a574',
+                            400: '#c48a52',
+                            500: '#a0693a',
+                            600: '#7a4f2c',
+                            700: '#5c3a20',
+                            800: '#3d2614',
+                            900: '#1e1209',
+                        },
+                        cream: '#f5e6d3',
+                        forest: {
+                            600: '#2d5016',
+                            700: '#1a3a0a',
+                            800: '#0f2605',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body bg-coffee-900 text-cream overflow-x-hidden">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#beranda" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-coffee-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i class="fas fa-mug-hot text-coffee-900 text-lg"></i>
+                    </div>
+                    <span class="font-display text-xl font-bold tracking-wide">Kopi Nusantara</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#beranda" class="nav-link active">Beranda</a>
+                    <a href="#tentang" class="nav-link">Tentang</a>
+                    <a href="#produk" class="nav-link">Produk</a>
+                    <a href="#testimoni" class="nav-link">Testimoni</a>
+                    <a href="#kontak" class="nav-link">Kontak</a>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Kopi%20Nusantara!%20Saya%20tertarik%20untuk%20memesan%20kopi." target="_blank" class="cta-btn-small">
+                        <i class="fab fa-whatsapp mr-1"></i> Pesan Sekarang
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button id="hamburger" class="md:hidden flex flex-col gap-[6px] p-2 group" aria-label="Toggle Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+            <div class="px-6 py-8 flex flex-col gap-4">
+                <a href="#beranda" class="mobile-nav-link">Beranda</a>
+                <a href="#tentang" class="mobile-nav-link">Tentang</a>
+                <a href="#produk" class="mobile-nav-link">Produk</a>
+                <a href="#testimoni" class="mobile-nav-link">Testimoni</a>
+                <a href="#kontak" class="mobile-nav-link">Kontak</a>
+                <a href="https://wa.me/6281234567890?text=Halo%20Kopi%20Nusantara!%20Saya%20tertarik%20untuk%20memesan%20kopi." target="_blank" class="cta-btn-small mt-4 text-center">
+                    <i class="fab fa-whatsapp mr-1"></i> Pesan Sekarang
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="beranda" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="hero-coffee.png" alt="Kopi Nusantara" class="w-full h-full object-cover" loading="eager">
+            <div class="absolute inset-0 bg-gradient-to-b from-coffee-900/80 via-coffee-900/60 to-coffee-900"></div>
+        </div>
+
+        <!-- Floating particles -->
+        <div class="particles" id="particles"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <div class="animate-on-scroll">
+                <p class="text-coffee-300 font-body text-sm md:text-base tracking-[0.3em] uppercase mb-4">Est. 2018 • Yogyakarta</p>
+                <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
+                    Cita Rasa<br>
+                    <span class="text-coffee-400 italic">Nusantara</span><br>
+                    Dalam Setiap Tegukan
+                </h1>
+                <p class="text-coffee-100/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Kopi single-origin terbaik dari pelosok Indonesia, di-roasting dengan penuh cinta di jantung kota Yogyakarta.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/6281234567890?text=Halo%20Kopi%20Nusantara!%20Saya%20tertarik%20untuk%20memesan%20kopi." target="_blank" class="cta-btn-primary">
+                        <i class="fab fa-whatsapp mr-2"></i> Pesan via WhatsApp
+                    </a>
+                    <a href="#produk" class="cta-btn-secondary">
+                        Lihat Produk <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-coffee-400/50 rounded-full flex justify-center pt-2">
+                <div class="w-1.5 h-3 bg-coffee-400/70 rounded-full scroll-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TENTANG SECTION ===== -->
+    <section id="tentang" class="py-24 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Image -->
+                <div class="animate-on-scroll relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="coffee-shop.png" alt="Interior Kopi Nusantara" class="w-full h-[400px] md:h-[500px] object-cover" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-coffee-900/40 to-transparent"></div>
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -right-4 md:-right-6 bg-coffee-700/90 backdrop-blur-md rounded-2xl p-5 shadow-xl border border-coffee-600/30">
+                        <p class="font-display text-3xl font-bold text-coffee-300">7+</p>
+                        <p class="text-coffee-100/70 text-sm">Tahun<br>Pengalaman</p>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="animate-on-scroll">
+                    <p class="text-coffee-400 font-body text-sm tracking-[0.2em] uppercase mb-3">Tentang Kami</p>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        Dari Biji Pilihan,<br>
+                        <span class="text-coffee-300 italic">Untuk Penikmat Sejati</span>
+                    </h2>
+                    <div class="space-y-4 text-coffee-100/70 leading-relaxed">
+                        <p>
+                            <strong class="text-cream">Kopi Nusantara</strong> lahir dari kecintaan kami terhadap kekayaan kopi Indonesia. Sejak 2018, kami telah menjelajahi berbagai daerah penghasil kopi terbaik — dari dataran tinggi Toraja hingga lereng Gunung Ijen — untuk menemukan biji kopi dengan karakter unik.
+                        </p>
+                        <p>
+                            Setiap biji kopi kami roasting langsung di workshop kami di Yogyakarta menggunakan metode <em>artisan roasting</em>, memastikan setiap cangkir kopi yang Anda nikmati memiliki cita rasa yang kaya dan autentik.
+                        </p>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 mt-10">
+                        <div class="text-center">
+                            <p class="font-display text-3xl font-bold text-coffee-400">15+</p>
+                            <p class="text-coffee-100/60 text-sm mt-1">Asal Biji Kopi</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-display text-3xl font-bold text-coffee-400">5K+</p>
+                            <p class="text-coffee-100/60 text-sm mt-1">Pelanggan Setia</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-display text-3xl font-bold text-coffee-400">4.9</p>
+                            <p class="text-coffee-100/60 text-sm mt-1">Rating Google</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KEUNGGULAN SECTION ===== -->
+    <section class="py-20 bg-coffee-800/50 relative">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;2&quot; fill=&quot;%23c48a52&quot;/></svg>'); background-size: 60px 60px;"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 animate-on-scroll">
+                <p class="text-coffee-400 font-body text-sm tracking-[0.2em] uppercase mb-3">Mengapa Kami</p>
+                <h2 class="font-display text-4xl md:text-5xl font-bold">Keunggulan Kami</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-fire text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-3">Fresh Roasted</h3>
+                    <p class="text-coffee-100/60 leading-relaxed">Setiap batch kopi di-roasting segar sesuai pesanan. Kami pastikan kopi sampai ke tangan Anda dalam kondisi paling optimal.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-mountain text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-3">Single Origin</h3>
+                    <p class="text-coffee-100/60 leading-relaxed">Biji kopi dipilih langsung dari petani lokal di berbagai daerah Indonesia, mendukung ekonomi petani kopi Nusantara.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-3">Gratis Ongkir</h3>
+                    <p class="text-coffee-100/60 leading-relaxed">Free delivery untuk area Yogyakarta dan subsidi ongkir untuk pengiriman ke seluruh Indonesia via ekspedisi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUK SECTION ===== -->
+    <section id="produk" class="py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <p class="text-coffee-400 font-body text-sm tracking-[0.2em] uppercase mb-3">Menu Pilihan</p>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Produk Unggulan</h2>
+                <p class="text-coffee-100/60 max-w-2xl mx-auto">Kopi single-origin pilihan dari berbagai daerah terbaik Indonesia, di-roasting sempurna untuk Anda.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1: Toraja -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image-wrapper">
+                        <img src="coffee-varieties.png" alt="Kopi Toraja" class="product-image" loading="lazy">
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs bg-coffee-700/60 text-coffee-300 px-2 py-1 rounded-full">Medium Roast</span>
+                        </div>
+                        <h3 class="font-display text-lg font-semibold mb-1">Toraja Sapan</h3>
+                        <p class="text-coffee-100/50 text-sm mb-3">Notes: Cokelat, Rempah, Floral</p>
+                        <div class="flex items-center justify-between">
+                            <p class="font-display text-xl font-bold text-coffee-300">Rp 85K</p>
+                            <span class="text-coffee-100/40 text-xs">250gr</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20memesan%20Kopi%20Toraja%20Sapan%20250gr" target="_blank" class="product-cta mt-4">
+                            <i class="fab fa-whatsapp mr-1"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Gayo -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image-wrapper">
+                        <img src="coffee-varieties.png" alt="Kopi Gayo" class="product-image" loading="lazy">
+                        <div class="product-badge bg-forest-600">Organic</div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs bg-coffee-700/60 text-coffee-300 px-2 py-1 rounded-full">Light Roast</span>
+                        </div>
+                        <h3 class="font-display text-lg font-semibold mb-1">Aceh Gayo</h3>
+                        <p class="text-coffee-100/50 text-sm mb-3">Notes: Fruity, Herbal, Sweet</p>
+                        <div class="flex items-center justify-between">
+                            <p class="font-display text-xl font-bold text-coffee-300">Rp 90K</p>
+                            <span class="text-coffee-100/40 text-xs">250gr</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20memesan%20Kopi%20Aceh%20Gayo%20250gr" target="_blank" class="product-cta mt-4">
+                            <i class="fab fa-whatsapp mr-1"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Kintamani -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image-wrapper">
+                        <img src="coffee-varieties.png" alt="Kopi Kintamani" class="product-image" loading="lazy">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs bg-coffee-700/60 text-coffee-300 px-2 py-1 rounded-full">Medium Roast</span>
+                        </div>
+                        <h3 class="font-display text-lg font-semibold mb-1">Bali Kintamani</h3>
+                        <p class="text-coffee-100/50 text-sm mb-3">Notes: Citrus, Vanilla, Nutty</p>
+                        <div class="flex items-center justify-between">
+                            <p class="font-display text-xl font-bold text-coffee-300">Rp 95K</p>
+                            <span class="text-coffee-100/40 text-xs">250gr</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20memesan%20Kopi%20Bali%20Kintamani%20250gr" target="_blank" class="product-cta mt-4">
+                            <i class="fab fa-whatsapp mr-1"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4: Flores -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image-wrapper">
+                        <img src="coffee-varieties.png" alt="Kopi Flores" class="product-image" loading="lazy">
+                        <div class="product-badge" style="background: linear-gradient(135deg, #7a4f2c, #c48a52);">Premium</div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs bg-coffee-700/60 text-coffee-300 px-2 py-1 rounded-full">Dark Roast</span>
+                        </div>
+                        <h3 class="font-display text-lg font-semibold mb-1">Flores Bajawa</h3>
+                        <p class="text-coffee-100/50 text-sm mb-3">Notes: Smoky, Caramel, Bold</p>
+                        <div class="flex items-center justify-between">
+                            <p class="font-display text-xl font-bold text-coffee-300">Rp 100K</p>
+                            <span class="text-coffee-100/40 text-xs">250gr</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20memesan%20Kopi%20Flores%20Bajawa%20250gr" target="_blank" class="product-cta mt-4">
+                            <i class="fab fa-whatsapp mr-1"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONI SECTION ===== -->
+    <section id="testimoni" class="py-24 md:py-32 bg-coffee-800/30 relative overflow-hidden">
+        <!-- Decorative -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-coffee-400/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-coffee-400/5 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 animate-on-scroll">
+                <p class="text-coffee-400 font-body text-sm tracking-[0.2em] uppercase mb-3">Testimoni</p>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Kata Mereka</h2>
+                <p class="text-coffee-100/60 max-w-2xl mx-auto">Apa kata pelanggan setia kami tentang pengalaman menikmati Kopi Nusantara.</p>
+            </div>
+
+            <!-- Testimonial Slider -->
+            <div class="testimonial-slider relative">
+                <div class="testimonial-track" id="testimonial-track">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="flex gap-1 mb-4">
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                        </div>
+                        <p class="text-coffee-100/80 leading-relaxed mb-6 italic">"Kopi Toraja dari Kopi Nusantara benar-benar luar biasa! Aromanya harum banget dan rasanya smooth. Sudah langganan hampir 2 tahun dan nggak pernah mengecewakan."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-coffee-600 flex items-center justify-center">
+                                <span class="font-display font-bold text-coffee-200">RD</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-cream">Rizky Dwi</p>
+                                <p class="text-coffee-100/50 text-sm">Pelanggan dari Jakarta</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="flex gap-1 mb-4">
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                        </div>
+                        <p class="text-coffee-100/80 leading-relaxed mb-6 italic">"Packing-nya rapi, kopi-nya segar banget sampai bisa cium aromanya dari luar. Aceh Gayo-nya juara! Recommended banget buat pecinta kopi."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-coffee-600 flex items-center justify-center">
+                                <span class="font-display font-bold text-coffee-200">SA</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-cream">Sarah Amelia</p>
+                                <p class="text-coffee-100/50 text-sm">Pelanggan dari Bandung</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="flex gap-1 mb-4">
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                        </div>
+                        <p class="text-coffee-100/80 leading-relaxed mb-6 italic">"Sebagai barista rumahan, saya sangat memperhatikan kualitas biji kopi. Flores Bajawa dari Kopi Nusantara punya body yang kuat dan aftertaste yang memorable. Top!"</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-coffee-600 flex items-center justify-center">
+                                <span class="font-display font-bold text-coffee-200">BP</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-cream">Budi Prasetyo</p>
+                                <p class="text-coffee-100/50 text-sm">Home Barista, Surabaya</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+                        <div class="flex gap-1 mb-4">
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400"></i>
+                            <i class="fas fa-star text-coffee-400 opacity-40"></i>
+                        </div>
+                        <p class="text-coffee-100/80 leading-relaxed mb-6 italic">"Bali Kintamani-nya punya karakter citrus yang segar, cocok banget buat morning coffee. Pelayanan juga ramah, fast response di WhatsApp. Sukses terus Kopi Nusantara!"</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-coffee-600 flex items-center justify-center">
+                                <span class="font-display font-bold text-coffee-200">NW</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-cream">Nia Wulandari</p>
+                                <p class="text-coffee-100/50 text-sm">Pelanggan dari Yogyakarta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <div class="flex justify-center gap-3 mt-10">
+                    <button id="prev-btn" class="slider-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="flex items-center gap-2" id="slider-dots"></div>
+                    <button id="next-btn" class="slider-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALERI SECTION ===== -->
+    <section class="py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <p class="text-coffee-400 font-body text-sm tracking-[0.2em] uppercase mb-3">Galeri</p>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Momen Kami</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 animate-on-scroll">
+                <div class="gallery-item col-span-2 md:col-span-1 md:row-span-2">
+                    <img src="hero-coffee.png" alt="Galeri Kopi 1" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-mug-hot text-2xl mb-2"></i>
+                        <p class="font-display font-semibold">Secangkir Kebahagiaan</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="coffee-shop.png" alt="Galeri Kedai" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-store text-2xl mb-2"></i>
+                        <p class="font-display font-semibold">Kedai Kami</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="coffee-varieties.png" alt="Galeri Biji Kopi" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-seedling text-2xl mb-2"></i>
+                        <p class="font-display font-semibold">Biji Pilihan</p>
+                    </div>
+                </div>
+                <div class="gallery-item col-span-2">
+                    <img src="coffee-shop.png" alt="Galeri Roastery" class="w-full h-full object-cover" loading="lazy">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-fire text-2xl mb-2"></i>
+                        <p class="font-display font-semibold">Proses Roasting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KONTAK SECTION ===== -->
+    <section id="kontak" class="py-24 md:py-32 bg-coffee-800/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <p class="text-coffee-400 font-body text-sm tracking-[0.2em] uppercase mb-3">Hubungi Kami</p>
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Temui Kami</h2>
+                <p class="text-coffee-100/60 max-w-2xl mx-auto">Kunjungi kedai kami atau hubungi via WhatsApp untuk pemesanan dan informasi lebih lanjut.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="animate-on-scroll space-y-8">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">Alamat</h4>
+                            <p class="text-coffee-100/60">Jl. Prawirotaman No. 42, Mergangsan,<br>Yogyakarta 55153</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">Jam Operasional</h4>
+                            <p class="text-coffee-100/60">Senin - Sabtu: 08.00 - 22.00 WIB<br>Minggu: 09.00 - 21.00 WIB</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">WhatsApp</h4>
+                            <p class="text-coffee-100/60">+62 812-3456-7890</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">Email</h4>
+                            <p class="text-coffee-100/60">hello@kopinusantara.id</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="flex gap-4 pt-4">
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok text-xl"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter text-xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="animate-on-scroll">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border border-coffee-700/30 h-[400px]">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.0!2d110.3666!3d-7.8106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNDgnMzguMiJTIDExMMKwMjInMDAuMCJF!5e0!3m2!1sid!2sid!4v1234567890"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Lokasi Kopi Nusantara">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Big CTA -->
+            <div class="mt-20 text-center animate-on-scroll">
+                <div class="big-cta-box">
+                    <h3 class="font-display text-3xl md:text-4xl font-bold mb-4">Siap Menikmati Kopi Terbaik?</h3>
+                    <p class="text-coffee-100/70 mb-8 max-w-lg mx-auto">Hubungi kami via WhatsApp untuk pemesanan, konsultasi pilihan kopi, atau kunjungi langsung kedai kami.</p>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Kopi%20Nusantara!%20Saya%20tertarik%20untuk%20memesan%20kopi." target="_blank" class="cta-btn-primary text-lg px-10 py-4">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i> Chat via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-coffee-900 border-t border-coffee-800/50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-coffee-400 flex items-center justify-center">
+                            <i class="fas fa-mug-hot text-coffee-900 text-sm"></i>
+                        </div>
+                        <span class="font-display text-lg font-bold">Kopi Nusantara</span>
+                    </div>
+                    <p class="text-coffee-100/50 text-sm leading-relaxed">Roasteri kopi spesialti Indonesia. Dari biji pilihan, untuk penikmat sejati.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4 text-coffee-300">Menu</h4>
+                    <div class="flex flex-col gap-2">
+                        <a href="#beranda" class="text-coffee-100/50 hover:text-coffee-300 transition-colors text-sm">Beranda</a>
+                        <a href="#tentang" class="text-coffee-100/50 hover:text-coffee-300 transition-colors text-sm">Tentang</a>
+                        <a href="#produk" class="text-coffee-100/50 hover:text-coffee-300 transition-colors text-sm">Produk</a>
+                        <a href="#kontak" class="text-coffee-100/50 hover:text-coffee-300 transition-colors text-sm">Kontak</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold mb-4 text-coffee-300">Kontak</h4>
+                    <div class="flex flex-col gap-2 text-sm text-coffee-100/50">
+                        <p><i class="fas fa-phone mr-2 text-coffee-400"></i>+62 812-3456-7890</p>
+                        <p><i class="fas fa-envelope mr-2 text-coffee-400"></i>hello@kopinusantara.id</p>
+                        <p><i class="fas fa-map-marker-alt mr-2 text-coffee-400"></i>Yogyakarta, Indonesia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-coffee-800/30 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-coffee-100/40 text-sm">&copy; 2026 Kopi Nusantara. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-coffee-100/40 hover:text-coffee-300 transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-coffee-100/40 hover:text-coffee-300 transition-colors"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="text-coffee-100/40 hover:text-coffee-300 transition-colors"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== FLOATING WHATSAPP BTN ===== -->
+    <a href="https://wa.me/6281234567890?text=Halo%20Kopi%20Nusantara!%20Saya%20tertarik%20untuk%20memesan%20kopi." target="_blank" id="wa-float" class="wa-float" aria-label="Chat WhatsApp">
+        <div class="wa-float-pulse"></div>
+        <div class="wa-float-icon">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </div>
+        <span class="wa-float-label">Chat Kami</span>
+    </a>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
